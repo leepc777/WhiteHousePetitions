@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Project7
 //
-//  Created by sam on 2/9/18.
+//  Created by Patrick on 2/9/18.
 //  Copyright © 2018 patrick. All rights reserved.
 //
 
@@ -15,7 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //MARK: insert 2nd VC to topRated Tab
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            
+            // set refernce to current storyBoard
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            
+            // creat a new instance of current NavibationController "NAVController"
+            // NAVcontroller already embeded with a TableViewController
+            let vc = storyBoard.instantiateViewController(withIdentifier: "NavController")
+            
+            //new tab at tag 1. a tobRated icon, tag 0 has been built in StoryBoard UI as Most Resent
+            vc.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag:1)
+            //add the new navigation VC to tabBarcontroller
+            tabBarController.viewControllers?.append(vc)
+            
+        }
+        
         return true
     }
 
