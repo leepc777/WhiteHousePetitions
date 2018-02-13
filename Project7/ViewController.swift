@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UITableViewController {
 
     var petitions = [[String: String]]() //array of dictionary
+    let activityIndicator = UIActivityIndicatorView()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("current tag in navigation Controller is : \(navigationController?.tabBarItem.tag)")
@@ -29,21 +29,24 @@ class ViewController: UITableViewController {
         }
         if let url = URL(string: urlString) {
             
-            if let data = try? Data(contentsOf: url) {
-                
-                let json = JSON(data:data)
-                
-                if json["metadata"]["responseInfo"]["status"].intValue == 200 {
+            performUIUpdatesOnMain {
+                if let data = try? Data(contentsOf: url) {
                     
-                    parse(json: json)
+                    let json = JSON(data:data)
                     
-                    return
-                    //return will return to the
+                    if json["metadata"]["responseInfo"]["status"].intValue == 200 {
+                        
+                        self.parse(json: json)
+                        
+                        return
+                        //return will break viewDidLoad
+                    }
                 }
+
             }
         }
         
-        showError()
+//        showError()
         
     }
     
@@ -57,8 +60,11 @@ class ViewController: UITableViewController {
             let obj = ["title": title,"body": body,"sigs": sigs]
             
             petitions.append(obj)
-            
+            print("%%% parse got called inside the loop %%%%%%%%%   ")
+
         }
+        print("%%% parse got called %%%%%%%%%   ")
+
         tableView.reloadData()
     }
     
@@ -74,14 +80,32 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        //MARK: - set up indicator
+//        activityIndicator.center = view.center
+//        activityIndicator.hidesWhenStopped = true
+//        activityIndicator.activityIndicatorViewStyle = .gray
+//        self.view.addSubview(activityIndicator)
+//        activityIndicator.startAnimating()
+//        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+
+//        //stop indicator after view appear
+//        activityIndicator.stopAnimating()
+//        UIApplication.shared.endIgnoringInteractionEvents()
+
+        print("%%% numberOfRowsInSection got called %%%%%%%%%   ")
         return petitions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let petition = petitions[indexPath.row] // read out dictionary
         cell.textLabel?.text = petition["title"]
         cell.detailTextLabel?.text = petition["body"]
+        print("%%% cellForRowAt got called %%%%%%%%%   ")
+
         return cell
     }
 

@@ -14,6 +14,7 @@
 		22337EB0202E4DC2006AD54E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22337EAE202E4DC2006AD54E /* LaunchScreen.storyboard */; };
 		22337EB8202E533B006AD54E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337EB7202E533B006AD54E /* SwiftyJSON.swift */; };
 		22D22DD2202E5E0300602F6E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D22DD1202E5E0300602F6E /* DetailViewController.swift */; };
+		22F18DC12032B20900EC9B49 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F18DC02032B20900EC9B49 /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		22337EB1202E4DC2006AD54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22337EB7202E533B006AD54E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		22D22DD1202E5E0300602F6E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		22F18DC02032B20900EC9B49 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				22D22DD1202E5E0300602F6E /* DetailViewController.swift */,
 				22337EA9202E4DC2006AD54E /* Main.storyboard */,
 				22337EB7202E533B006AD54E /* SwiftyJSON.swift */,
+				22F18DC02032B20900EC9B49 /* GCDBlackBox.swift */,
 				22337EAC202E4DC2006AD54E /* Assets.xcassets */,
 				22337EAE202E4DC2006AD54E /* LaunchScreen.storyboard */,
 				22337EB1202E4DC2006AD54E /* Info.plist */,
@@ -146,6 +149,7 @@
 				22337EA8202E4DC2006AD54E /* ViewController.swift in Sources */,
 				22337EA6202E4DC2006AD54E /* AppDelegate.swift in Sources */,
 				22D22DD2202E5E0300602F6E /* DetailViewController.swift in Sources */,
+				22F18DC12032B20900EC9B49 /* GCDBlackBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
