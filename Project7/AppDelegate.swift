@@ -24,12 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // creat a new instance of current NavibationController "NAVController"
             // NAVcontroller already embeded with a TableViewController
-            let vc = storyBoard.instantiateViewController(withIdentifier: "NavController")
+            let vc1 = storyBoard.instantiateViewController(withIdentifier: "NavController")
             
             //new tab at tag 1. a tobRated icon, tag 0 has been built in StoryBoard UI as Most Resent
-            vc.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag:1)
+            vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag:1)
             //add the new navigation VC to tabBarcontroller
-            tabBarController.viewControllers?.append(vc)
+            tabBarController.viewControllers?.append(vc1)
+            
+            let vc2 = storyBoard.instantiateViewController(withIdentifier: "NavController")
+
+            vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+            tabBarController.viewControllers?.append(vc2)
+
             
         }
         

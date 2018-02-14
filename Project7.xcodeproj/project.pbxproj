@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220BCD082033AA66008E5876 /* DetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BCD072033AA66008E5876 /* DetailViewController2.swift */; };
+		220BCD0A2033BEDF008E5876 /* DetailViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BCD092033BEDF008E5876 /* DetailViewController3.swift */; };
 		22337EA6202E4DC2006AD54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337EA5202E4DC2006AD54E /* AppDelegate.swift */; };
 		22337EA8202E4DC2006AD54E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337EA7202E4DC2006AD54E /* ViewController.swift */; };
 		22337EAB202E4DC2006AD54E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22337EA9202E4DC2006AD54E /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220BCD072033AA66008E5876 /* DetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController2.swift; sourceTree = "<group>"; };
+		220BCD092033BEDF008E5876 /* DetailViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController3.swift; sourceTree = "<group>"; };
 		22337EA2202E4DC2006AD54E /* Project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22337EA5202E4DC2006AD54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22337EA7202E4DC2006AD54E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				22337EA5202E4DC2006AD54E /* AppDelegate.swift */,
 				22337EA7202E4DC2006AD54E /* ViewController.swift */,
 				22D22DD1202E5E0300602F6E /* DetailViewController.swift */,
+				220BCD072033AA66008E5876 /* DetailViewController2.swift */,
+				220BCD092033BEDF008E5876 /* DetailViewController3.swift */,
 				22337EA9202E4DC2006AD54E /* Main.storyboard */,
 				22337EB7202E533B006AD54E /* SwiftyJSON.swift */,
 				22F18DC02032B20900EC9B49 /* GCDBlackBox.swift */,
@@ -145,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220BCD0A2033BEDF008E5876 /* DetailViewController3.swift in Sources */,
+				220BCD082033AA66008E5876 /* DetailViewController2.swift in Sources */,
 				22337EB8202E533B006AD54E /* SwiftyJSON.swift in Sources */,
 				22337EA8202E4DC2006AD54E /* ViewController.swift in Sources */,
 				22337EA6202E4DC2006AD54E /* AppDelegate.swift in Sources */,

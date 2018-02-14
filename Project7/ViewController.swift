@@ -12,6 +12,8 @@ class ViewController: UITableViewController {
 
     var petitions = [[String: String]]() //array of dictionary
     let activityIndicator = UIActivityIndicatorView()
+    var detailCell = UIViewController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +22,28 @@ class ViewController: UITableViewController {
         
         let urlString: String
         
-        if navigationController?.tabBarItem.tag == 0 {
-            
+//        if navigationController?.tabBarItem.tag == 0 {
+//
+//            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+//
+//        } else {
+//            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+//        }
+        
+        
+        switch navigationController?.tabBarItem.tag {
+        
+        case 0? :
             urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-            
-        } else {
+            detailCell = DetailViewController()
+        case 1? :
             urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+            detailCell = DetailViewController()
+        default :
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+            detailCell = DetailViewController2()
         }
+        
         if let url = URL(string: urlString) {
             
             performUIUpdatesOnMain {
@@ -111,10 +128,38 @@ class ViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let vc = DetailViewController()
-        vc.detailItem = petitions[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        
+         switch navigationController?.tabBarItem.tag {
+         
+         case 0? :
+         
+         let vc = DetailViewController()
+         vc.detailItem = petitions[indexPath.row]
+         navigationController?.pushViewController(vc, animated: true)
+         
+         
+         case 1? :
+         
+         let vc = DetailViewController2()
+         vc.detailItem = petitions[indexPath.row]
+         navigationController?.pushViewController(vc, animated: true)
+         
+         default :
+         
+         let vc = DetailViewController3()
+//         vc.detailItem = petitions[indexPath.row]
+         navigationController?.pushViewController(vc, animated: true)
+         
+         }
+ 
+        
+//        let vc = DetailViewController2()
+//        vc.detailItem = petitions[indexPath.row]
+        
+        
+        
+        
+//        navigationController?.pushViewController(vc, animated: true)
         
     }
 
